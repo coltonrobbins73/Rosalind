@@ -1,4 +1,4 @@
-input_string = 'Mortal Fibonacci Rabbits'
+input_string = 'Mendels First Law'
 
 output = input_string.replace(' ', '_')
 
