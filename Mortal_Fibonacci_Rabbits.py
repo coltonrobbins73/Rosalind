@@ -1,12 +1,23 @@
 import pandas as pd
 import re
 
-with open(r'c:\Users\crobbins\Downloads\rosalind_prot (1).txt') as f:
-    txt = f.read()
+def total_rabbit_pairs_dynamic(n, m):
+    # Initialize an array to store the number of rabbits for each month
+    rabbits = [0] * (n + 1)
+    
+    # Set the initial conditions
+    rabbits[1] = 1
+    rabbits[2] = 1
 
+    # Calculate the number of rabbits for each subsequent month
+    for i in range(3, n + 1):
+        rabbits[i] = rabbits[i - 1] + rabbits[i - 2] + rabbits[i - 3]
+    
+    return rabbits[n]
 
-with open(r'c:\Users\crobbins\Downloads\output.txt', 'w') as f:
-    f.write(protein_seq)
+# Example usage of the function
+n_example = 35
+k_example = 5
+total_pairs_example = total_rabbit_pairs_dynamic(n_example, k_example)
 
-
-print(protein_seq)
+print(total_pairs_example)
