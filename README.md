@@ -8,14 +8,6 @@ This repository contains solutions to various bioinformatics problems from the R
 - Python 3.x
 - Libraries: pandas
 
-## Installation
-
-1. Clone or download the repository.
-2. Install Python 3.x if not already installed.
-3. Install required Python libraries:
-   ```
-   pip install pandas
-   ```
 ## Contributing
 We encourage contributions and improvements to these solutions! If you have alternative solutions, enhancements, or corrections, please feel free to submit a pull request. When contributing, please adhere to the following guidelines:
 
