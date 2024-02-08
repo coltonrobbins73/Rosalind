@@ -1,0 +1,15 @@
+def fib_finder_slow(fibonacci_iterations):
+    if fibonacci_iterations <= 1:
+        return 1
+    else:
+        return fib_finder_slow(fibonacci_iterations - 1) + fib_finder_slow(fibonacci_iterations - 2)
+    
+print(fib_finder_slow(6))
+
+def fib_finder(fibonacci_iterations):
+    fib_list = [1, 1]
+    for i in range(2, fibonacci_iterations):
+        fib_list.append(fib_list[i - 1] + fib_list[i - 2])
+    return fib_list[-1]
+
+print(fib_finder(23))

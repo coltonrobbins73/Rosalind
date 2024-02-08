@@ -1,0 +1,26 @@
+from Bio.Seq import Seq
+
+def parse_fasta(txt):
+    """Parse FASTA formatted data and return a dictionary of sequences."""
+    seqs = txt[1:].split('>')
+
+    seq_dict = {}
+    for seq in seqs:
+        split_seq = seq.split('\n', 1)
+        seq_dict[split_seq[0]] = split_seq[1].replace('\n', '')
+    
+    return seq_dict
+
+with open(r'c:\Users\colto\Downloads\rosalind_ini.txt') as f:
+    txt = f.read()
+
+txt = Seq(txt)
+
+nuc_count = txt.count('A'), txt.count('C'), txt.count('G'), txt.count('T')
+
+nuc_count = ' '.join([str(item) for item in nuc_count])
+
+print(nuc_count)
+
+with open('Nucleotide_count_output.txt', 'w') as f:
+    f.write(str(nuc_count))
